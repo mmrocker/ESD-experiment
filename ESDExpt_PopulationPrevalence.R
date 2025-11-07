@@ -96,12 +96,12 @@ df2 <- df %>%
 
 #disease plot
 PLOT7 <- ggplot(df2, aes(x = Sampling_Day, fill = ESD_Stage_photo, pattern = Molt)) +
-  geom_bar_pattern(position = "fill") +
+  geom_bar_pattern(position = "fill", pattern_fill= "black") +
   scale_fill_manual(
     values = c("black", viridis::magma(4, direction = 1, begin = 0.97, end = 0.4)),
     labels = c("Healthy" = "No disease") ) +
   scale_pattern_manual(
-    values = c("pch", "none", "none"),
+    values = c("circle", "none", "none"),
     labels = c("none" = " ", "Dead" = " ") ) +
   facet_grid(rows = vars(Treatment), cols = vars(Source_Pop)) +
   labs(
